@@ -35,7 +35,8 @@ public class TweetDAO extends AbstractDao {
         List<User> followedWithCurrent = new ArrayList<>(followedUsers);
         followedWithCurrent.add(currentUser);
         Query query = entityManager.createQuery("select t from  Tweet t where t.author in :list ");
-        query.setParameter("list",followedWithCurrent);
+        query.setParameter("list", followedWithCurrent);
         return query.getResultList();
 
     }
+}

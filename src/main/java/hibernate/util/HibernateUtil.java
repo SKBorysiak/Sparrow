@@ -55,4 +55,7 @@ public class HibernateUtil {
         entityManager.getTransaction().commit();
 
     }
+    public EntityManager getEntityManager(){
+        return entityManager;
+    }
 }

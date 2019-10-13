@@ -24,12 +24,14 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+        UserDAO userDAO=new UserDAO();
         service = new UserService(new UserDAO());
         super.init();
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.getRequestDispatcher("/register.jsp").forward(req, resp);
     }
 

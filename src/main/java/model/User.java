@@ -1,5 +1,5 @@
-package model;
 
+package model;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -8,11 +8,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     @Column(name = "id")
     private long id;
 
@@ -43,16 +42,14 @@ public class User {
     @ManyToMany(mappedBy = "follows")
     private Set<User> followed = new HashSet<>();
 
-
     public User() {
-
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -76,8 +73,8 @@ public class User {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String lastnName) {
+        this.lastName = lastnName;
     }
 
     public String getEmail() {
@@ -129,6 +126,7 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", dateOfRegistration=" + dateOfRegistration +
                 ", follows=" + follows +
                 ", followed=" + followed +
                 '}';
@@ -138,9 +136,7 @@ public class User {
 
         User user = new User();
 
-
         public UserBuilder() {
-
         }
 
         public UserBuilder buildLogin(String login) {
@@ -168,9 +164,16 @@ public class User {
             return this;
         }
 
+        public UserBuilder buildDateOfRegistration(Date dateOfRegistration) {
+            user.setDateOfRegistration(dateOfRegistration);
+            return this;
+        }
 
         public User buildUser() {
             return this.user;
+
         }
+
     }
 }
+

@@ -23,8 +23,13 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = new User.UserBuilder().buildPassword("lala").buildEmail("w@w.pl").buildLastName("kowalik").buildName("Gabi")
-                .buildLogin("Gabs").buildUser();
+        User user = new User.UserBuilder()
+                .buildPassword("lala")
+                .buildEmail("w@w.pl")
+                .buildLastName("kowalik")
+                .buildName("Gabi")
+                .buildLogin("Gabs")
+                .buildUser();
 
         List<User> allUsers = userDAO.getAllUsers();
         req.setAttribute("users", allUsers);

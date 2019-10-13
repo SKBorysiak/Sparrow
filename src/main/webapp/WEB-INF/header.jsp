@@ -1,87 +1,59 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: Rico
+  Date: 12.10.2019
+  Time: 16:17
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import = " java.util.* " %>
-<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <html>
 <head>
-    <title>Register</title>
+    <title>hello</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
             background: #f5f5f5
         }
-        .blue {
-            background-color: #00b5ec !important;
+        .text-white-50 {
+            color: rgba(255, 255, 255, .5);
+        }
+        .bg-blue {
+            background-color: #00b5ec;
+        }
+        .box-shadow {
+            box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+        }
+        .tab {
+            padding-left: 50px;
         }
     </style>
 </head>
 <body>
-<main role="main" class="container">
-    <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h4 class="text-center mb-4 mt-1">Sign up</h4>
-        <hr>
-        <c:if test='<%=request.getAttribute("hasError") == "true" %>'>
-            <div class="alert alert-warning">
-                <strong>Failure!</strong> <%=request.getAttribute("error")%>
-            </div>
-        </c:if>
-        <form action="register" method="POST">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input name="login" class="form-control" placeholder="Login" type="text" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input name="username" class="form-control" placeholder="Name" type="text" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input name="lastName" class="form-control" placeholder="Last name" type="text" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input name="password" class="form-control" placeholder="*****" type="password" aria-required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input name="passwordRepeated" class="form-control" placeholder="*****" type="password" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                    </div>
-                    <input name="email" class="form-control" placeholder="email" type="email" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block blue"> Sign up</button>
-                </div>
-                <p class="text-center"><a href="login" class="btn">Back to login page</a></p>
-            </div>
-        </form>
+
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-blue rounded box-shadow">
+    <img class="mr-3" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" width="48" height="48">
+    <div class="lh-100">
+        <h6 class="mb-0 text-white lh-100">${fn:toUpperCase(login)}</h6>
     </div>
-</main>
+    <div class="lh-100">
+        <h6 class="mb-0 lh-100 tab">
+            <a class="text-white" href="messages">Messages</a>
+        </h6>
+    </div>
+    <div class="lh-100">
+        <h6 class="mb-0 lh-100 tab">
+            <a class="text-white" href="users">Users</a>
+        </h6>
+    </div>
+    <div class="lh-100 ml-auto">
+        <h6 class="mb-0 lh-100">
+            <a class="text-white" href="logout">Log out</a>
+        </h6>
+    </div>
+</div>
+
 </body>
-</html>
+</html>>

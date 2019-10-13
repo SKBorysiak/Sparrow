@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Rico
+  Date: 12.10.2019
+  Time: 16:15
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -23,7 +30,9 @@
 </head>
 <body>
 <main role="main" class="container">
+
     <%@include file="header.jsp" %>
+
     <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Following</h6>
         <c:forEach items="${followedUsers}" var="followedUser">
@@ -36,7 +45,7 @@
                     <strong class="d-block text-gray-dark">
                         On sparrow since :
                         <fmt:formatDate value="${followedUser.dateOfRegistration}" pattern="yyyy-MM-dd HH-mm"/> </strong>
-                    <a href="unfollow?userLoginToUnfollow=${followedUser.login}"><b>Unfollow</b></a>
+                    <a href="unfollow?userLoginToUnFollow=${followedUser.login}"><b>UnFollow</b></a>
                 </p>
             </div>
         </c:forEach>
@@ -61,4 +70,4 @@
     </div>
 </main>
 </body>
-</html>
+</html></html>

@@ -1,9 +1,10 @@
 package model;
 
 
-        import javax.persistence.*;
-        import java.util.HashSet;
-        import java.util.Set;
+import javax.persistence.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -29,6 +30,9 @@ public class User {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "date_of_registration")
+    private Date dateOfRegistration;
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "follows_followers",
@@ -108,6 +112,14 @@ public class User {
         this.followed = followed;
     }
 
+    public Date getDateOfRegistration() {
+        return dateOfRegistration;
+    }
+
+    public void setDateOfRegistration(Date dateOfRegistration) {
+        this.dateOfRegistration = dateOfRegistration;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -122,13 +134,12 @@ public class User {
                 '}';
     }
 
-    public static  class UserBuilder {
+    public static class UserBuilder {
 
         User user = new User();
 
 
-
-        public  UserBuilder() {
+        public UserBuilder() {
 
         }
 
@@ -156,7 +167,9 @@ public class User {
             user.setPassword(password);
             return this;
         }
-        public User buildUser(){
+
+
+        public User buildUser() {
             return this.user;
         }
     }

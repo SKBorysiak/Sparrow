@@ -60,7 +60,7 @@ public class RegisterServlet extends HttpServlet {
             req.setAttribute("error", registerStatus);
             req.getRequestDispatcher("/register.jsp").forward(req,resp);
         } else {
-            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 }

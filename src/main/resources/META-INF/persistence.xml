@@ -11,13 +11,11 @@
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="9cf5054468"/>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/simple_sparrow?useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+                      value="jdbc:mysql://localhost:3306/simple_sparrow?useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Warsaw&amp;useSSL=false&amp;allowPublicKeyRetrieval=true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-            <property name="hibernate.jdbc.time_zone" value="UTC"/>
-          <property name="hibernate.hbm2ddl.auto" value="update"/>
-          <!--    <property name="hibernate.hbm2ddl.auto" value="create-drop"/>/>-->
-            <property name = "hibernate.show_sql" value = "true" />
-            <!--      <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+            <property name="hibernate.jdbc.time_zone" value="Europe/Warsaw"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="true"/>
         </properties>
     </persistence-unit>
 </persistence>
